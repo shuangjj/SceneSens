@@ -4,6 +4,7 @@
     mobile sensors. Other specific applications will be built based on this 
     recognition project
 
+    Author: Lexon (lexonleed@gmail.com)
 ----
 ## Building environment
 ### Build Dependencies
