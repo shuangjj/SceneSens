@@ -1,11 +1,13 @@
 # SceneSens
 
-    The scene sensing project is about public scene (place) recognition using 
-    mobile sensors. Other specific applications will be built based on this 
-    recognition project
+The scene sensing project is about public scene (place) recognition using 
+mobile sensors. Other specific applications will be built based on this 
+recognition project
 
-    Author: Lexon (lexonleed@gmail.com)
+Author: Lexon (lexonleed@gmail.com)
+
 ----
+
 ## Building environment
 ### Build Dependencies
 * [Open Sensing Framework](http://funf.org/developers.html)
