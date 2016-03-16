@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FunfSens</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="remote_url">http://129.32.91.21/</string>
+    <!--classification pipelines -->
+    <string name="pipeline_audio">        
+        {"@type":"edu.mit.media.funf.pipeline.BasicPipeline",
+         "name":"pipeline_audio",
+         "version":1,
+         "upload": {
+         	"url": \"http://localhost:40002/data/usage/audio/scene\",
+         	"@schedule": {"interval": 86400} 	
+         },
+         "data":[
+            "edu.mit.media.funf.probe.builtin.AudioFeaturesProbe"
+         ]
+         } </string>
+    <string name="pipeline_light">        
+        {"@type":"edu.mit.media.funf.pipeline.BasicPipeline",
+         "name":"pipeline_light",
+         "version":1,
+         "upload": {
+         	"url": \"http://localhost:40002/data/usage/light/scene\",
+         	"@schedule": {"interval": 86400} 	
+         },
+         "data":[
+            "edu.mit.media.funf.probe.builtin.LightSensorProbe"
+         ]
+         } </string>
+    <string name="pipeline_Bluetooth">        
+        {"@type":"edu.mit.media.funf.pipeline.BasicPipeline",
+         "name":"pipeline_Bluetooth",
+         "version":1,
+         "upload": {
+         	"url": \"http://localhost:40002/data/usage/bluetooth/scene\",
+         	"@schedule": {"interval": 86400} 	
+         },
+         "data":[
+            "edu.mit.media.funf.probe.builtin.BluetoothProbe"
+         ]
+         } </string>
+    <string name="pipeline_Wifi">        
+        {"@type":"edu.mit.media.funf.pipeline.BasicPipeline",
+         "name":"pipeline_Wifi",
+         "version":1,
+         "upload": {
+         	"url": \"http://localhost:40002/data/usage/wifi/scene\",
+         	"@schedule": {"interval": 86400} 	
+         },
+         "data":[
+            "edu.mit.media.funf.probe.builtin.WifiProbe"
+         ]
+         } </string>
+         
+    <string name="pipeline_test_audio">        
+        {"@type":"edu.mit.media.funf.pipeline.BasicPipeline",
+         "name":"test_audio",
+         "version":1,
+         "upload": {
+         	"url": \"http://localhost:40002/data/test/audio/scene\",
+         	"@schedule": {"interval": 86400} 	
+         },
+         "data":[
+	         {"@type": "edu.mit.media.funf.probe.builtin.AudioFeaturesProbe",
+	          "@schedule": {"interval": 300}
+	         }
+         ]
+         } </string>
+    <string name="pipeline_test_light">        
+        {"@type":"edu.mit.media.funf.pipeline.BasicPipeline",
+         "name":"test_light",
+         "version":1,
+         "upload": {
+         	"url": \"http://localhost:40002/data/test/light/scene\",
+         	"@schedule": {"interval": 86400} 	
+         },
+         "data":[
+            "edu.mit.media.funf.probe.builtin.LightSensorProbe"
+         ]
+         } </string>
+
+    <string name="pipeline_test_Bluetooth">        
+        {"@type":"edu.mit.media.funf.pipeline.BasicPipeline",
+         "name":"test_Bluetooth",
+         "version":1,
+         "archive": {
+         	"@schedule": {"@interval": 86400}
+         },
+         "upload": {
+         	"url": \"http://localhost:40002/data/test/bluetooth/scene\",
+         	"@schedule": {"interval": 86400} 	
+         },
+         "data":[
+            "edu.mit.media.funf.probe.builtin.BluetoothProbe"
+         ]
+         } </string>
+
+    <string name="pipeline_test_Wifi">        
+        {"@type":"edu.mit.media.funf.pipeline.BasicPipeline",
+         "name":"test_Wifi",
+         "version":1,
+         "upload": {
+         	"url": \"http://localhost:40002/data/test/wifi/scene\",
+         	"@schedule": {"interval": 86400} 	
+         },
+         "data":[
+            {"@type": "edu.mit.media.funf.probe.builtin.WifiProbe",
+             "@schedule": {"@interval": 30}
+            }
+         ]
+         } </string>
+    
+    <!-- Scene list -->
+    <string-array name="scenes_array">
+         <item>Office</item>
+         <item>Cafe</item>
+         <item>SubwayStation</item>
+         <item>Library</item>
+         <item>Bar</item>
+         <item>Elevator</item>
+         <item>Others</item>
+    </string-array>
+
+</resources>

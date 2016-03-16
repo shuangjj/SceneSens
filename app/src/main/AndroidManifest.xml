@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.temple.cis.funfsens"
+    android:versionCode="1"
+    android:versionName="1.0"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- Required permissions for funf -->
+    <uses-permission android:name="android.permission.BATTERY_STATS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- Permissions for AudioFeaturesProbe -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- BluetoothProbe -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- WifiProbe -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <!-- Permission for upload task -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:screenOrientation="portrait"
+        tools:replace="label">
+        <activity
+            android:name="edu.temple.cis.funfsens.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- Funf service -->
+        <service android:name="edu.mit.media.funf.FunfManager" >
+            <!-- Probe for train -->
+            <meta-data
+                android:name="pipeline_audio" 
+                android:value="@string/pipeline_audio" />
+            <meta-data
+                android:name="pipeline_light" 
+                android:value="@string/pipeline_light" />
+            <meta-data
+                android:name="pipeline_Bluetooth" 
+                android:value="@string/pipeline_Bluetooth" />
+                                                <meta-data
+                android:name="pipeline_Wifi" 
+                android:value="@string/pipeline_Wifi" />
+            <!-- Probes for test -->                                    
+            <meta-data
+                android:name="test_audio" 
+                android:value="@string/pipeline_test_audio" />
+            <meta-data
+                android:name="test_light" 
+                android:value="@string/pipeline_test_light" />
+            <meta-data
+                android:name="test_Bluetooth" 
+                android:value="@string/pipeline_test_Bluetooth" />
+            <meta-data
+                android:name="test_Wifi" 
+                android:value="@string/pipeline_test_Wifi" />
+        </service>
+
+        <receiver
+            android:name="edu.mit.media.funf.Launcher"
+            android:enabled="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_CHANGED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.DOCK_EVENT" />
+                <action android:name="android.intent.action.ACTION_SCREEN_ON" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+
+    </application>
+
+</manifest>
